@@ -1,0 +1,13 @@
+r-base
+cdo
+basemap
+r-readxl
+r-vegan
+r-hier.part
+r-gtools
+r-boot
+r-survival
+r-survey
+r-relaimpo
+r-foreach
+r-doParallel

@@ -1,0 +1,53 @@
+# TraceMe
+# config.yml
+---
+documentation:
+  description: |
+    Test new version of TraceMe and run traceability analysis 
+
+  authors:
+    - zhou_jian
+
+datasets:
+  - {model: ACCESS-ESM1-5, exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100} # 0101, 0250
+  - {model: BCC-CSM2-MR,   exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: CanESM5,       exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: CESM2,         exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100} # 0001, 0150
+  - {model: CMCC-ESM2,     exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: CNRM-ESM2-1,   exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: EC-Earth3-Veg, exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: IPSL-CM6A-LR,  exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: MIROC-ES2L,    exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: MPI-ESM1-2-LR, exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: NorESM2-MM,    exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: TaiESM1,       exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+  - {model: UKESM1-0-LL,   exp: ssp585, ensemble: r1i1p1,  start_year: 2015,  end_year: 2100}
+
+variables:
+  - {name: cCwd,    frequency: month, unit: kg m-2}
+  - {name: cLitter, frequency: month, unit: kg m-2}
+  - {name: cSoil,   frequency: month, unit: kg m-2}
+  - {name: cVeg,    frequency: month, unit: kg m-2}
+  - {name: npp,     frequency: month, unit: kg m-2 s-1}
+  - {name: gpp,     frequency: month, unit: kg m-2 s-1}
+  - {name: tas,     frequency: month, unit: K}
+  - {name: pr,      frequency: month, unit: kg m-2 s-1}
+
+region:
+  latmin: -90
+  latmax: 90
+  lonmin: -180
+  lonmax: 180
+
+path:
+  inputDir: /data_mpathfp1/home/zhou_j/TraceME_offline/TraceMe2_offline/inputData/runData_CMIP6/ssp585 #/mnt/f/ubuntu/Works/C4MIP_testData #/mnt/c/ubuntu_docs/TraceME_offline/C4MIP_testData 
+  workRoot: /data_mpathfp1/home/zhou_j/TraceME_offline/TraceMe2_offline/workDir/CMIP6_dir/ssp585 #/mnt/f/ubuntu/Works/C4MIP_workDir_new #/mnt/c/ubuntu_docs/TraceME_offline/C4MIP_workDir 
+
+analysis: # temporal analysis: default yes
+  temporalAnalysis: yes
+  spatialAnalysis: yes
+  VegetationType: yes
+  aboveAndBelowGround: yes
+
+script:
+  TraceMeLand 

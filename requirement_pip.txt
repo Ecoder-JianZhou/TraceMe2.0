@@ -1,0 +1,8 @@
+pyyaml
+pandas
+netCDF4
+scipy
+matplotlib
+pyecharts
+seaborn
+cdo

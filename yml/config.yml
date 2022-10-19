@@ -1,0 +1,39 @@
+# TraceMe
+# config.yml
+---
+documentation:
+  description: |
+    Test new version of TraceMe and run traceability analysis 
+
+  authors:
+    - zhou_jian
+
+datasets:
+  - {model: CESM2,         exp: historical, ensemble: r1i1p1,  start_year: 1980,  end_year: 2010}
+  - {model: CNRM-ESM2-1,   exp: historical, ensemble: r1i1p1,  start_year: 1981,  end_year: 2010}
+  - {model: IPSL-CM6A-LR,  exp: historical, ensemble: r1i1p1,  start_year: 1982,  end_year: 2010}
+
+variables:
+  - {name: cLitter, frequency: month, unit: kg m-2}
+  - {name: cSoil,   frequency: month, unit: kg m-2}
+  - {name: cVeg,    frequency: month, unit: kg m-2}
+  - {name: npp,     frequency: month, unit: kg m-2 s-1}
+  - {name: gpp,     frequency: month, unit: kg m-2 s-1}
+  - {name: tas,     frequency: month, unit: K}
+  - {name: pr,      frequency: month, unit: kg m-2 s-1}
+
+region:
+  latmin: -90
+  latmax: 90
+  lonmin: -180
+  lonmax: 180
+
+path:
+  inputDir: ../../../../TraceMe_offline/inputData #/mnt/e/MyWorks/traceME_offline/inputData 
+  workRoot: ../../../../TraceMe_offline/TraceMe_workdir #/mnt/e/MyWorks/traceME_offline/TraceMe_workdir
+
+preprocess:
+  None
+
+script:
+  TraceMeLand 

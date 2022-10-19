@@ -1,0 +1,18 @@
+
+conda install r-base
+conda install cdo
+conda install basemap
+conda install r-readxl
+conda install r-vegan
+conda install r-hier.part
+conda install r-gtools
+conda install -c conda-forge blas
+R CMD INSTALL rdaenvpart_0.1.0.tar.gz
+
+pip install pyyaml
+pip install pandas
+pip install netCDF4
+pip install scipy
+pip install matplotlib
+pip install pyecharts
+pip install seaborn
